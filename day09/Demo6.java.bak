@@ -1,0 +1,52 @@
+class Demo6 {
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		// Inter i = new Inter();
+		Inter i = new Demo();
+		i.print();
+	}
+}
+
+/*
+	接口定义：
+		狭义的角度就是java中的interface
+		广义的角度是对外提供规则的都是接口
+	接口的特点：
+		使用关键字interface表示
+			interface 接口名 {}
+		类名实现用implements表示
+			class 类型 implements 接口名 {}
+		接口不能实例化
+			按照多态的方法实例化
+		接口的子类
+			可以是抽象。但意义不打
+			可以是具体的。要重写接口中的所有抽象方法
+*/
+/*
+	接口的成员变量
+		只能是常量，并且是静态的并对外公共的
+		默认修饰符：public static final 三者没有顺序之分
+		建议手动加上
+	接口的构造方法
+		接口是没有构造方法的，虽然类可以同implements继承接口中的方法，但是子类不是继承接口的，而是继承object的
+		（接口是干爹object才是亲爹）
+	接口方法：
+		只能是抽象方法
+		默认添加public abstract修饰符
+*/
+
+interface Inter {
+	public abstract void print();
+	public static final int num = 10;
+	public abstract void cat();
+}
+
+class Demo /* extends Object */ implements Inter { // 一个类不写继承那么默认继承object类
+	public void print() {
+		System.out.println("接口实例化通过多态");
+		System.out.println(num);
+	}
+	public void cat() {
+		System.out.println("接口的方法只能抽象，子类需要添加public修饰符重写");
+	}
+}

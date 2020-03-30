@@ -1,0 +1,30 @@
+/**
+	继承
+		让类与类之间产生关系，子父类 
+*/
+class Demo2 {
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		Cat c = new Cat();
+		c.color = "黄色";
+		c.age = 4;
+		c.eat();
+		c.sleep();
+	}
+}
+
+class Animal{
+	String color;
+	int age;
+
+	public void eat() {
+		System.out.println("吃饭");
+	}
+	public void sleep() {
+		System.out.println("睡觉");
+	}
+}
+class Cat extends Animal{
+}
+class Dog extends Animal{
+}

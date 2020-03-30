@@ -1,0 +1,23 @@
+class Demo6 {
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		Person p1 = new Person();
+		p1.name = "李四";
+		p1.country = "中国";
+
+		Person p2 = new Person();
+		p2.name = "张三";
+
+		p1.speak();
+		p2.speak();
+	}
+}
+
+class Person {
+	String name;	 // 姓名  不是私有属性 不需要通过get和set方法获取设置属性值
+	static String country;  // 国籍  静态属性相当于将属性房贷方法中公用了不需要重复创建
+
+	public void speak() {
+		System.out.println(name + "..." + country);
+	}
+}

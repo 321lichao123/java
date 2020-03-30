@@ -1,0 +1,29 @@
+class Demo2 {
+	public static void main(String[] args) {
+		// System.out.println("Hello World!");
+		Person p1 = new Person();
+		p1.show();
+		System.out.println("=======================================");
+		Person p2 = new Person("张三", 23);
+		p2.show();
+	}
+}
+
+class Person {
+	private String name;
+	private int age;
+
+	public Person() {
+		System.out.println("空参的构造");
+	}
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+		System.out.println("有参的构造");	
+	}
+
+	public void show() {
+		System.out.println(name + "...." + age);
+	}
+}
